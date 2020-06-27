@@ -10,4 +10,11 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print("game._ready()")
+	
+	print("Drawing background tilemap")
+	
+	for y in range(mapHeight):
+		for x in range(mapWidth):
+			lowTileMap.set_cell(x, y, 0)
+

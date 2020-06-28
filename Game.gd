@@ -4,6 +4,7 @@ export(int) var mapWidth = 64
 export(int) var mapHeight = 64
 
 onready var lowTileMap = $LowTileMap
+onready var robot = $Robot
 
 func _init():
 	print("game._init()")
@@ -25,6 +26,9 @@ func _ready():
 	for x in range(-1, mapWidth+1):
 		lowTileMap.set_cell(x, -1, Graphics.BGTiles.Warning)
 		lowTileMap.set_cell(x, mapHeight, Graphics.BGTiles.Warning)
+
+	robot.set_game_node(self)
+	robot.initialise_nav()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("quit_game"):

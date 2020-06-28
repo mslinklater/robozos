@@ -16,5 +16,9 @@ func _ready():
 #	pass
 
 func debug_draw():
-	pass
+	var pointArray = get_points()
+	
+	#draw Points
+	for i in range(0, pointArray.size()):
+		pass
 	

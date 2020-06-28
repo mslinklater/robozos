@@ -17,7 +17,7 @@ func _process(delta):
 			wanted_zoom = 1.0
 		else:
 			wanted_zoom = 0.25
-
+	
 	if Input.is_action_pressed("ui_down"):
 		offset.y += delta * camera_speed * zoom.x
 		

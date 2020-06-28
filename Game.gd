@@ -26,7 +26,7 @@ func _ready():
 		lowTileMap.set_cell(x, -1, Graphics.BGTiles.Warning)
 		lowTileMap.set_cell(x, mapHeight, Graphics.BGTiles.Warning)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit(0)
 		

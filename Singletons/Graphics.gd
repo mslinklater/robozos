@@ -7,4 +7,3 @@ enum BGTiles {
 
 const kTileSize = 16
 
-

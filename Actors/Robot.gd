@@ -10,7 +10,8 @@ func _ready():
 	print("Robot is set up")
 
 func _draw():
-	nav.debug_draw(self)
+	pass
+#	nav.debug_draw(self)
 	
 func set_game_node(gameNode):
 	game = gameNode

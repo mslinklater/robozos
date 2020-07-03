@@ -13,8 +13,16 @@ func _init():
 func _ready():
 	print("game._ready()")
 	
-	print("Drawing background tilemap")
+	initialise_map()
 	
+	robot.set_game_node(self)
+	robot.initialise_nav()
+
+func _process(_delta):
+	if Input.is_action_just_pressed("quit_game"):
+		get_tree().quit(0)
+		
+func initialise_map():
 	for y in range(mapHeight):
 		for x in range(mapWidth):
 			lowTileMap.set_cell(x, y, Graphics.BGTiles.Grass)
@@ -26,11 +34,4 @@ func _ready():
 	for x in range(-1, mapWidth+1):
 		lowTileMap.set_cell(x, -1, Graphics.BGTiles.Warning)
 		lowTileMap.set_cell(x, mapHeight, Graphics.BGTiles.Warning)
-
-	robot.set_game_node(self)
-	robot.initialise_nav()
-
-func _process(_delta):
-	if Input.is_action_just_pressed("quit_game"):
-		get_tree().quit(0)
-		
+	

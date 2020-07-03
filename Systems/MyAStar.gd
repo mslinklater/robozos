@@ -16,6 +16,7 @@ func _ready():
 #	pass
 
 func debug_draw(node2d):
+	return
 	var pointArray = get_points()
 	
 	var x = node2d.position.x
